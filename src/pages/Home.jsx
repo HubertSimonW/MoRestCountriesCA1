@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import CountryCard from "../components/CountryCard"; //reusable comp for each country
 import { motion } from "framer-motion"; // grid animation
+import { API_BASE } from "../lib/apiBase";
+
 
 const FIELDS =
   "name,cca3,flags,region,subregion,population,capital,languages,currencies,borders"; //API

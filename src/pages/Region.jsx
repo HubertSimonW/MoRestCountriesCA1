@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import CountryCard from "../components/CountryCard";
 import { motion } from "framer-motion";
+import { API_BASE } from "../lib/apiBase";
+
 
 // Animation staggered grid
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.04 } } };

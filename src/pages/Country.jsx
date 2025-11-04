@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { API_BASE } from "../lib/apiBase";
 
 export default function Country() {
   const { code } = useParams();
