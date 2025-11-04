@@ -22,14 +22,14 @@ export default function Home() {
       setStatus("Loading…");
       try {
         // selected fields
-        const url1 = `/api/v3.1/all?fields=${FIELDS}&ts=${Date.now()}`;
+        const url1 = `${API_BASE}/v3.1/all?fields=${FIELDS}&ts=${Date.now()}`;
         let res = await fetch(url1, { cache: "no-store" });
         if (!res.ok) throw new Error(`HTTP ${res.status} on fields`);
 
         let data = await res.json();
         if (!Array.isArray(data) || data.length === 0) {
           // if nothing returned fallbacxk
-          const url2 = `/api/v3.1/all?ts=${Date.now()}`;
+          const url2 = `${API_BASE}/v3.1/all?ts=${Date.now()}`;
           res = await fetch(url2, { cache: "no-store" });
           if (!res.ok) throw new Error(`HTTP ${res.status} on fallback`);
           data = await res.json();

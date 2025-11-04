@@ -21,7 +21,7 @@ export default function Region() {
       setStatus("Loading…");
       try {
         // Fetch them in the selected region
-        const res = await fetch(`/api/v3.1/region/${region}`);
+        const res = await fetch(`${API_BASE}/v3.1/region/${region}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setCountries(Array.isArray(data) ? data : []);

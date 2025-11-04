@@ -14,7 +14,7 @@ export default function Country() {
       setStatus("Loading…");
       try {
         // Set up in vite.config.js
-        const res = await fetch(`/api/v3.1/alpha/${code}`);
+        const res = await fetch(`${API_BASE}/v3.1/alpha/${code}`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setCountry(Array.isArray(data) ? data[0] : data);
